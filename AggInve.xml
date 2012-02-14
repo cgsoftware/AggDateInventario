@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_agginve" model="ir.ui.view">
+            <field name="name">Imposta Data Inventario</field>
+            <field name="model">gen_inventari</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Imposta Data Inventario">
+                    <group col="6" colspan="6">
+                        <group colspan="4" >
+
+                              <label colspan="4" width="220" string="Forza la data  Movimento Alla Data Inventario"/>
+ 
+                            <newline />
+                          <newline />
+                   <group colspan="2" col="4">                            
+                            <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                            <button icon="gtk-ok" name="aggiorna" string="Aggiorna" type="object"/>
+                    </group>                            
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+               <act_window name="Forza Data Inv"
+            res_model="gen_inventari"
+            src_model="stock.inventory"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            id="action_wizard_agginve"
+            view_id="wizard_agginve"/>
+               
+            
+                        
+            
+    </data>
+</openerp>
